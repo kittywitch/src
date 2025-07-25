@@ -1,5 +1,10 @@
-{pkgs}:
-pkgs.mkShell {
+{pkgs}: let
+  inherit (pkgs) lib;
+  inherit (lib.meta) getExe;
+in pkgs.mkShell {
+  shellHook = ''
+    ${getExe pkgs.toilet} --gay --font mono9 "~/src"
+  '';
   packages = with pkgs; [
     fetchdps
     katgba-emu
