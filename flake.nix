@@ -46,6 +46,7 @@
           overlays.default
           (final: prev: {
               katgba = katgba.packages.${system}.katgba;
+              katgba-emu = katgba.packages.${system}.katgba-emu;
           })
         ];
       };
@@ -53,9 +54,7 @@
       packages = {
         katgba = pkgs.katgba;
         fetchdps = pkgs.fetchdps;
-      };
-      apps = {
-        katgba-emu = katgba.apps.${system}.katgba-emu;
+        katgba-emu = pkgs.katgba-emu;
       };
     });
     formatting = import ./formatting.nix {inherit inputs;};
