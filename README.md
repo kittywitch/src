@@ -1,3 +1,3 @@
-# katsrc
+# src
 
 This is my `~/src`!

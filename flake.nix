@@ -1,5 +1,5 @@
 {
-  description = "katsrc";
+  description = "kat's ~/src";
   inputs = {
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -26,6 +26,9 @@
         flake-compat.follows = "flake-compat";
         flake-utils.follows = "flake-utils";
       };
+    };
+    srcprv = {
+      url = "git+ssh://git@github.com/kittywitch/srcprv?ref=main";
     };
   };
 
