@@ -8,4 +8,4 @@ let
     src = ./.;
   };
 in
-katsrc.defaultNix
+  katsrc.defaultNix

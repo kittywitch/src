@@ -1,4 +1,5 @@
-{ pkgs }: pkgs.mkShell {
+{pkgs}:
+pkgs.mkShell {
   packages = with pkgs; [
     fetchdps
     pkgs.nur.repos.ihaveamac._3dstools

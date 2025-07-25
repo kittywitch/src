@@ -21,11 +21,11 @@ eval set -- ${args}
 while :
 do
   case $1 in
-	-d | --days) DAYS_AGO="$2" ; shift 2 ;;
-	-c | --count) REQUEST_COUNT="$2" ; shift 2 ;;
+    -d | --days) DAYS_AGO="$2" ; shift 2 ;;
+    -c | --count) REQUEST_COUNT="$2" ; shift 2 ;;
     --) shift; break ;;
     *) >&2 echo Unsupported option: $1
-       usage ;;
+      usage ;;
   esac
 done
 

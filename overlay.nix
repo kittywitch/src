@@ -1,3 +1,3 @@
-final: prev: {
-  fetchdps = final.callPackage ./fetchdps { };
+final: _prev: {
+  fetchdps = final.callPackage ./fetchdps {};
 }
