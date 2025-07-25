@@ -8,18 +8,35 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils = {
       url = "github:numtide/flake-utils";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
     };
   };
 
-  outputs = { self, flake-utils, nixpkgs, ... }:
+  outputs = { self, flake-utils, nixpkgs, nur, ... }@inputs:
     let
-      utils-out = flake-utils.lib.simpleFlake {
-          inherit self nixpkgs;
-            name = "katsrc";
-            overlay = ./overlay.nix;
-            shell = ./shell.nix;
+      eachSystemOutputs = flake-utils.lib.eachDefaultSystem (system: rec {
+        overlays.default = import ./overlay.nix;
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            nur.overlays.default
+            overlays.default
+          ];
         };
-    in utils-out;
+        devShells.default = import ./shell.nix { inherit pkgs; };
+      });
+      formatting = import ./formatting.nix {inherit inputs; };
+    in eachSystemOutputs // rec {
+      inherit (formatting) formatter;
+    };
 }
 
