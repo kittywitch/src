@@ -4,3 +4,6 @@
 [submodule "nixfiles"]
 	path = nixfiles
 	url = git@github.com:kittywitch/nixfiles.git
+[submodule "katgba"]
+	path = katgba
+	url = git@github.com:kittywitch/katgba.git
