@@ -45,7 +45,7 @@
           nur.overlays.default
           overlays.default
           (final: prev: {
-              katgba = katgba.packages.${system}.default;
+              katgba = katgba.packages.${system}.katgba;
           })
         ];
       };
@@ -54,11 +54,15 @@
         katgba = pkgs.katgba;
         fetchdps = pkgs.fetchdps;
       };
+      apps = {
+        katgba-emu = katgba.apps.${system}.katgba-emu;
+      };
     });
     formatting = import ./formatting.nix {inherit inputs;};
   in
     eachSystemOutputs
     // rec {
       inherit (formatting) formatter;
+      inherit inputs;
     };
 }

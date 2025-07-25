@@ -85,11 +85,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1753412721,
-        "narHash": "sha256-tb7XMwjtgeUYrLvzAHnCCafH7n/Hiy9B69wJOcx8YNY=",
+        "lastModified": 1753413751,
+        "narHash": "sha256-WcLeRTTk0X+JhdYp+iccjk5Py13O4hzGls9m6oeY5YM=",
         "owner": "kittywitch",
         "repo": "katgba",
-        "rev": "a84087c06f94e9735e6922652102172a516a9297",
+        "rev": "5897ef4e0862593be554f74b9eec630a54a530f4",
         "type": "github"
       },
       "original": {
