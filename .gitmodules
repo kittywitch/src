@@ -10,3 +10,6 @@
 [submodule "srcprv"]
 	path = prv
 	url = git@github.com:kittywitch/srcprv.git
+[submodule "konawall-py"]
+	path = konawall-py
+	url = git@github.com:kittywitch/konawall-py.git
